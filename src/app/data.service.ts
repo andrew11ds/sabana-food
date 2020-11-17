@@ -12,6 +12,8 @@ export class DataService {
   }
 
   getData(){
-    return this.http.get('https://maps.googleapis.com/maps/api/place/textsearch/xml?query=presto+in+barranquilla&type=restaurant&key=AIzaSyChDeekoou6-EnjGXvYPLeB1YuY_qXgHec')
+    var restaurante = 'subway+in+barranquilla';
+
+    return this.http.post('../assets/PHP/test.php',{restaurante});
   }
 }
