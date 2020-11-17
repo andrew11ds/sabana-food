@@ -1,0 +1,40 @@
+<!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">SabanaFood</a>
+      <a class="btn btn-danger" href="#">Sign In</a>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <img src="../assets/imagen2.jpg" class = "img-responsive position-absolute mx-auto d-block"/>
+  <header class="masthead text-white text-center">
+    <div class="container-content p-4" >
+      <div class="modal-dialog text-center " style=" margin-top: 10%;">
+          <div class="col-sm-8" style="margin:0 auto; margin-top:25%">
+            <div class="modal-content p-4">
+                <div class="col-12 login-img p-3">
+                    <img src="../assets/imagen2.jpg" style="height: 100px; width: 100px;">
+                </div>
+                <form class="col-12">
+                    <div class="forms-group p-1" onclick="changeState();">
+                        <i class="fas fa-user" style="position:absolute; left:35px; padding-top:10px; font-size: 18px"></i>
+                        <input id="userid" type="text" class="form-control" placeholder="Nombre de usuario" style="padding-left:40px;">
+                    </div>
+                    <div id="formpass" class="forms-group p-2" onclick="changeState();">
+                        <i class="fas fa-lock" style="position:absolute; left:35px; padding-top:10px; font-size: 18px"></i>
+                        <input id="userpass" type="password" class="form-control" placeholder="Contraseña" style="padding-left:40px;">
+                        <div class="invalid-feedback">Sorry, username or password incorrect!</div>
+                    </div>
+                    <div>
+                    <button id="ingresar" type="button" class="btn btn-danger" onclick="Login();">Ingresar</button>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-link">¿Aún no tiene una cuenta?</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+      </div>
+      </div>
+  </header>

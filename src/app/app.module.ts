@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { DataService } from "./data.service";
+import { LoginComponent } from './login/login.component';
+import { SingUpComponent } from './sing-up/sing-up.component';
 
 const routes = [
   {path: '', component: MainComponent}
@@ -15,7 +17,9 @@ const routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    LoginComponent,
+    SingUpComponent
   ],
   imports: [
     BrowserModule,
