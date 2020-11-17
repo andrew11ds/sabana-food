@@ -4,14 +4,16 @@ import { RouterModule, Route } from "@angular/router";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
 
-const routes = {
-  {path: '', component: }
-};
+const routes = [
+  {path: '', component: MainComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
