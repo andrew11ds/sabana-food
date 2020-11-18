@@ -16,18 +16,18 @@
                 <div class="col-12 login-img p-3">
                     <img src="../assets/imagen2.jpg" style="height: 100px; width: 100px;">
                 </div>
-                <form class="col-12">
+                <form class="col-12" >
                     <div class="forms-group p-1">
                         <img src="../assets/Icon/person-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
-                        <input [(ngModel)]="userName"  type="text" class="form-control" placeholder="Nombre de usuario" style="padding-left:40px;">
+                        <input #userName  type="text" class="form-control" placeholder="Nombre de usuario" style="padding-left:40px;">
                     </div>
                     <div id="formpass" class="forms-group p-2">
                         <img src="../assets/Icon/lock-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
-                        <input [(ngModel)]="userPass" type="password" class="form-control" placeholder="Contraseña" style="padding-left:36px;">
+                        <input #userPass type="password" class="form-control" placeholder="Contraseña" style="padding-left:36px;">
                         <div class="invalid-feedback">Sorry, username or password incorrect!</div>
                     </div>
                     <div>
-                    <button (click)="Login()" id="ingresar" type="button" class="btn btn-danger">Ingresar</button>
+                    <button (click) = "Login(userName,userPass)" id="ingresar" type="button" class="btn btn-danger">Ingresar</button>
                     </div>
                     <div>
                       <button type="button" class="btn btn-link" routerLink="/signup">¿Aún no tiene una cuenta?</button>

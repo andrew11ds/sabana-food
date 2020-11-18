@@ -13,11 +13,10 @@ export class DataService {
 
   getData(){
     var restaurante = 'subway+in+barranquilla';
-
     return this.http.post('../assets/PHP/test.php',{restaurante});
   }
 
-  getLogin(userName,userPass){
-    return this.http.post('../assets/PHP/login.php',{userName,userPass});
+  getLogin(userName:any,userPass:any){
+    return this.http.post('http://localhost/hotelSabana/src/php/login.php',{userName,userPass});
   }
 }
