@@ -9,11 +9,14 @@ import { MainComponent } from './main/main.component';
 import { DataService } from "./data.service";
 import { LoginComponent } from './login/login.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
+import { ManageClientsComponent } from './manage-clients/manage-clients.component';
 
 const routes = [
   {path: '', component: MainComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SingUpComponent}
+  {path: 'signup', component: SingUpComponent},
+  {path: 'manageclients', component: ManageClientsComponent}
+
 ];
 
 @NgModule({
@@ -21,7 +24,8 @@ const routes = [
     AppComponent,
     MainComponent,
     LoginComponent,
-    SingUpComponent
+    SingUpComponent,
+    ManageClientsComponent
   ],
   imports: [
     BrowserModule,
