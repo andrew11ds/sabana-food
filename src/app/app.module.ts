@@ -12,7 +12,8 @@ import { SingUpComponent } from './sing-up/sing-up.component';
 
 const routes = [
   {path: '', component: MainComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SingUpComponent}
 ];
 
 @NgModule({
