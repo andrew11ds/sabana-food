@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../data.service";
 
 @Component({
   selector: 'app-login',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() {
-    $('#userid').addClass('is-invalid');
+  constructor(private data: DataService) {
   }
 
   ngOnInit(): void {
+  }
+
+  Login(){
+    let userName: string;
+    let userPass: string;
+
+    console.log(this.data.getLogin(userName,userPass));
+
   }
 
 }

@@ -16,4 +16,8 @@ export class DataService {
 
     return this.http.post('../assets/PHP/test.php',{restaurante});
   }
+
+  getLogin(userName,userPass){
+    return this.http.post('../assets/PHP/login.php',{userName,userPass});
+  }
 }
