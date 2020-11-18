@@ -11,7 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 
 const routes = [
-  {path: '', component: MainComponent}
+  {path: '', component: MainComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
