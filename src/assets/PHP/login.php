@@ -12,7 +12,7 @@
   $array=null;
 
   if(!empty($valor) && !empty($valor2)){
-    if ($resultado = $conn->query("SELECT User_Email FROM users where User_Email = '$valor' and User_Password = '$valor2'")) {
+    if ($resultado = $conn->query("SELECT User_FirstName, User_LastName, User_Email FROM users where User_Email = '$valor' and User_Password = '$valor2'")) {
         while ($t1 = $resultado ->fetch_assoc()) {
           $array[]=$t1;
         }
