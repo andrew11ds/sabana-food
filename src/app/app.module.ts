@@ -10,12 +10,14 @@ import { DataService } from "./data.service";
 import { LoginComponent } from './login/login.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { ManageClientsComponent } from './manage-clients/manage-clients.component';
+import { AfterLoginComponent } from './after-login/after-login.component';
 
 const routes = [
   {path: '', component: MainComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SingUpComponent},
-  {path: 'manageclients', component: ManageClientsComponent}
+  {path: 'manageclients', component: ManageClientsComponent},
+  {path: 'afterlogin', component: AfterLoginComponent}
 
 ];
 
@@ -25,7 +27,8 @@ const routes = [
     MainComponent,
     LoginComponent,
     SingUpComponent,
-    ManageClientsComponent
+    ManageClientsComponent,
+    AfterLoginComponent
   ],
   imports: [
     BrowserModule,
