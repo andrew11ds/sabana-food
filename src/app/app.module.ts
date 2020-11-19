@@ -36,7 +36,8 @@ const routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [DataService],
-  bootstrap: [AppComponent]
+  providers: [DataService,AfterLoginComponent],
+  bootstrap: [AppComponent],
+  exports: [AfterLoginComponent]
 })
 export class AppModule { }

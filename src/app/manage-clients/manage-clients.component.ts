@@ -8,16 +8,23 @@ import { DataService } from "../data.service";
 })
 export class ManageClientsComponent implements OnInit {
 
-
-
+  items = ['info restaurante',
+            'info restauranteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+            'info restaurante',
+            'info restaurante',
+            'info restauranteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeinfo restauranteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+            'info restaurante',
+            'info restaurante',
+            'info restaurante'
+          ];
 
   constructor(private dataService: DataService) {
-    this.items=[]
+    //this.items=[]
   }
 
   ngOnInit(): void {
 
-    var newOb=this.dataService.getcoordByAddress()//Lat,lng
+    /*var newOb=this.dataService.getcoordByAddress()//Lat,lng
     newOb.subscribe(val =>{
       var lat=val.results[0].geometry.location.lat
       var lng=val.results[0].geometry.location.lng
@@ -38,7 +45,7 @@ export class ManageClientsComponent implements OnInit {
       //  this.items.push(val2)
 
     })
-  })
+  })*/
 
 
 

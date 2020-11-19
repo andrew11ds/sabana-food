@@ -24,7 +24,7 @@
       <div class="card border-danger mb-3 " style="max-width: 20rem;">
         <div class="card-body">
           <div class="card-header text-danger  mb-3 ">Perfil</div>
-          <p class="card-title text-danger ">"Usuario"</p>
+          <p id="test" class="card-title text-danger ">{{ uName[0] }}</p>
           <p class="card-text text-danger">Correo electrónico:
           </p>
         </div>
@@ -40,13 +40,13 @@
                   <div class="row">
                 <div class="container p-4">
                   <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                      <div *ngFor="let item of this.items; let i = index">
+                      <div *ngFor="let item of items; let i = index">
                         <div *ngIf="true">
                           <div class="col-sm-12">
                             <div class="list-group-item">
                               <div class="card-body bg-light md-12">
-                                <h5 class="card-title text-dark ">{{item.name}}</h5>
-                                <p class="list-group-item">{{item.rating}}</p>
+                                <h5 class="card-title text-dark ">{{item}}</h5>
+                                <p class="list-group-item">{{item}}</p>
                                 </div>
 
                             </div>

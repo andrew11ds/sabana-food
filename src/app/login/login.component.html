@@ -19,11 +19,11 @@
                 <form class="col-12" >
                     <div class="forms-group p-1">
                         <img src="../assets/Icon/person-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
-                        <input #userName (click)="removeInvalid()" type="text" class="form-control" placeholder="Nombre de usuario" style="padding-left:40px;">
+                        <input id="jqUser" #userName (click)="removeInvalid()" type="text" class="form-control" placeholder="Nombre de usuario" style="padding-left:40px;">
                     </div>
                     <div id="formpass" class="forms-group p-2">
                         <img src="../assets/Icon/lock-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
-                        <input #userPass (click)="removeInvalid()" type="password" class="form-control" placeholder="Contraseña" style="padding-left:36px;">
+                        <input id="jqPass" #userPass (click)="removeInvalid()" type="password" class="form-control" placeholder="Contraseña" style="padding-left:36px;">
                         <div class="invalid-feedback">Sorry, username or password incorrect!</div>
                     </div>
                     <div>

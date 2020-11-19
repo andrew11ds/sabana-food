@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from "../data.service";
 import { Router } from "@angular/router";
+import { AfterLoginComponent } from '../after-login/after-login.component';
+import $ from "jquery";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
   @ViewChild('userPass') inputPass: any;
   @ViewChild('userName') inputUser: any;
 
-  constructor(private data: DataService, private router: Router) {
+  constructor(private data: DataService, private router: Router, private afterLogin: AfterLoginComponent) {
   }
 
   ngOnInit(): void {
@@ -20,19 +22,23 @@ export class LoginComponent implements OnInit {
 
   Login(userName:any,userPass:any){
     if (userName.value != '' && userPass.value != '') {
-      this.data.getLogin(userName.value,userPass.value).subscribe(val => {
-        if (val !=null) {
-          this.router.navigate(['/afterlogin']);
-        }else{
-          this.inputUser.nativeElement.classList.add('is-invalid');
-          this.inputPass.nativeElement.classList.add('is-invalid');
-        }
-      });
-    }else{
-      this.inputUser.nativeElement.classList.add('is-invalid');
-      this.inputPass.nativeElement.classList.add('is-invalid');
-    }
+      var userName = userName.value;
+      var userPass = userPass.value;
+      $.ajax({
+  			url: 'http://localhost/hotelSabana/src/php/login.php',
+  			type: 'POST',
+  			data: {userName,userPass},
+  			success: function (response) {
+  					var user_state = JSON.parse(response);
+  					if (response!="null") {
 
+  					}else {
+              $('#jqUser').addClass('is-invalid');
+              $('#jqPass').addClass('is-invalid');
+  					}
+  			}
+  	  });
+    }
   }
 
   removeInvalid(){

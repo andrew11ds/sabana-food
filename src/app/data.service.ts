@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
 export class DataService {
 
   constructor(private http: HttpClient) {
-    console.log('Servidor');
   }
 
   getData(){
