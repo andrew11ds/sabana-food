@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../data.service";
 
 @Component({
   selector: 'app-manage-clients',
@@ -7,20 +8,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageClientsComponent implements OnInit {
 
-  items = ['aaaaaa aaaa aa aaaaa aaaaa aaaaaa aa aaaaa aaa aaaaa aaaaa aaaaaaa aaaaaaaaaaaaa',
-            'bbbbbbbbb bbb bbbbbbbbb bbbbbbb bbbb bbbbbbbbb bbbbb bbbbb bbbbbbbbb bbbbbbbb',
-            'cccccc ccccccc cccccccccccc c ccccc ccccccc ccccc ccccc ccc cccccccccc ccccccc',
-            'ddddddd dd ddddd ddddd ddddddd dddd dddddd ddd dd dddddd dddddddd dddddddd ddddd',
-            'fffff ffffff ffffffff ffffff ffff ffff ffffff fffff ffffffff ffffff ffffff ffff',
-            'ggggggg gggggg gggg ggggg ggggggg gggggggg ggggg ggggggggg gggggggg ggggggggg',
-            'gggggggggg gggggg gggggg ggggggggggg gggggg ggggggg ggggggggggg gggggggggg',
-            'gggggggggg gggggggggg ggggggggg gggggggg gggg ggggg ggggggg ggggg gggggggggg'
-          ];
 
 
-  constructor() {}
 
-  ngOnInit(): void {
+  constructor(private dataService: DataService) {
+    this.items=[]
   }
 
+  ngOnInit(): void {
+
+    var newOb=this.dataService.getcoordByAddress()//Lat,lng
+    newOb.subscribe(val =>{
+      var lat=val.results[0].geometry.location.lat
+      var lng=val.results[0].geometry.location.lng
+     var rad=500 //Radius should be variable
+
+
+      //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lat,$lng&radius=$rad&type=restaurant&key=AIzaSyChDeekoou6-EnjGXvYPLeB1YuY_qXgHec
+      var restOb =this.dataService.getRestByAddress(lat,lng,rad)//Gets address by lat,lng,rad
+      restOb.subscribe(val2 =>{
+        var restaurants=val2.results
+        for (let i = 0; i < restaurants.length; i++) {
+          console.log(restaurants[i])
+          this.items.push(restaurants[i])//displays restaurants
+
+        }
+
+
+      //  this.items.push(val2)
+
+    })
+  })
+
+
+
+
+
+
+  }
 }
