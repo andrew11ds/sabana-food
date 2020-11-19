@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../data.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-sing-up',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data:DataService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  addUser(name:any,lastName:any,email:any,ced:any,pass:any){
+    var fName = name.value;
+    var fLastName = lastName.value;
+    var fEmail = email.value;
+    var fCed = ced.value;
+    var fPass = pass.value;
+
+    var result;
+    this.data.addUser2Db(fName,fLastName,fEmail,fCed,fPass).subscribe(val => result = val);
+    if(result==null){
+      this.router.navigate(['/login']);
+    }
   }
 
 }

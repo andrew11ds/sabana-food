@@ -25,7 +25,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Nombre</label>
-                        <input type="text" placeholder="Escriba su primer nombre" class="form-control form-control-sm" id="firstName" value="">
+                        <input #name type="text" placeholder="Escriba su primer nombre" class="form-control form-control-sm" id="firstName" value="">
                       </div>
                     </div>
                   </div>
@@ -33,15 +33,16 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Apellido</label>
-                        <input type="text" placeholder="Escriba su segundo nombre" class="form-control form-control-sm" id="secondName" value="">
+                        <input #lastName type="text" placeholder="Escriba su segundo nombre" class="form-control form-control-sm" id="secondName" value="">
                       </div>
                     </div>
+                    <img class="" src="../assets/Icon/logo.png" alt="Card image cap" style="position:absolute; margin-left:340px;">
                   </div>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Correo electrónico</label>
-                        <input type="text" placeholder="Escriba su correo electrónico" class="form-control form-control-sm" id="email" value="">
+                        <input #email type="text" placeholder="Escriba su correo electrónico" class="form-control form-control-sm" id="email" value="">
                       </div>
                     </div>
                   </div>
@@ -49,7 +50,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Número de cedula</label>
-                        <input type="text" placeholder="Digite su número cedula" class="form-control form-control-sm" id="phone" value="">
+                        <input #ced type="text" placeholder="Digite su número cedula" class="form-control form-control-sm" id="phone" value="">
                       </div>
                     </div>
                   </div>
@@ -57,14 +58,14 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Contraseña</label>
-                        <input type="password" placeholder="Escriba su contraseña" class="form-control form-control-sm" id="phone" value="">
+                        <input #pass type="password" placeholder="Escriba su contraseña" class="form-control form-control-sm" id="phone" value="">
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="col text-center">
-                        <button class="btn btn-danger regular-button"> Registrarse </button>
+                        <button (click) = "addUser(name,lastName,email,ced,pass)" class="btn btn-danger regular-button"> Registrarse </button>
                       </div>
                     </div>
                   </div>
