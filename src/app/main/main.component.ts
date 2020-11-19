@@ -10,10 +10,12 @@ export class MainComponent implements OnInit {
 
   constructor(private dataService: DataService) {
     //this.dataService.getData().subscribe(val => console.log(val));
+
       //document.getElementById("yeison").style.padding = "padding-top:100px;";
   }
 
   ngOnInit(): void {
+
   }
 
   get padding(): any{
