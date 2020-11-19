@@ -1,16 +1,16 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light">
   <div class="container">
-    <a class="navbar-brand" href="#">SabanaFood</a>
+      <h1 class="btn" routerLink="/login"><img  class="navbar-brand" src="../assets/Icon/Logo5.png"></h1>
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link bg-warning text-dark" routerlink="/afterlogin">Perfil</a>
+        <a class="nav-link bg-danger text-white" routerLink="/afterlogin">Perfil</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link bg-danger text-white " routerLink="/manageclients" >Buscar Restaurante</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link bg-warning text-dark " routerlink="/manageclients">Buscar Restaurante</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link bg-warning text-dark " routerlink="/login">Cerrar Sesión</a>
+        <a class="nav-link bg-danger text-white " routerLink="/login" >Cerrar Sesión</a>
       </li>
     </ul>
   </div>
@@ -21,11 +21,11 @@
 <div class="container-content col-md-3">
 
     <div class=" offset-md-1 " style="margin-top: 10%;">
-      <div class="card border-warning mb-3 " style="max-width: 20rem;">
+      <div class="card border-danger mb-3 " style="max-width: 20rem;">
         <div class="card-body">
-          <div class="card-header text-Black bg-warning mb-3 ">Profile</div>
-          <p class="card-title text-white bg-danger">"Usuario"</p>
-          <p class="card-text text-white bg-danger">Correo electrónico:
+          <div class="card-header text-danger  mb-3 ">Perfil</div>
+          <p class="card-title text-danger ">"Usuario"</p>
+          <p class="card-text text-danger">Correo electrónico:
           </p>
         </div>
       </div>
@@ -33,10 +33,10 @@
       </div>
 
 
-      <div class="col-md-8">
-          <div class="card">
+      <div class="col-md-8"  style="margin-top: 2%;">
+          <div class="card border-danger mb-3 ">
               <div class="card-body">
-                <h2 class="text-black bg-warning text-center">Historial Reservas</h2>
+                <h2 class="text-danger  text-center">Historial Reservas</h2>
                   <div class="row">
                 <div class="container p-4">
                   <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -44,8 +44,8 @@
                         <div *ngIf="true">
                           <div class="col-sm-12">
                             <div class="list-group-item">
-                              <div class="card-body md-12">
-                                <h5 class="card-title">Aqui va el nombre del restaurante</h5>
+                              <div class="card-body bg-light md-12">
+                                <h5 class="card-title text-dark ">Aqui va el nombre del restaurante</h5>
                                 <p class="list-group-item">{{item}}</p>
                                 </div>
 
