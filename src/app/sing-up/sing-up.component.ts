@@ -31,4 +31,14 @@ export class SingUpComponent implements OnInit {
     }
   }
 
+  back2Login(){
+    $('#LoginHTML').show();
+    $('#SignHTML').hide();
+  }
+
+  back2Main(){
+    $('#MainHTML').show();
+    $('#SignHTML').hide();
+  }
+
 }

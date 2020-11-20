@@ -32,4 +32,9 @@ export class MainComponent implements OnInit {
     $('#LoginHTML').show();
   }
 
+  go2Manage(){
+    $('#ManageHTML').show();
+    $('#MainHTML').hide();
+  }
+
 }

@@ -66,4 +66,14 @@ export class LoginComponent implements OnInit {
     this.inputPass.nativeElement.classList.remove('is-invalid');
   }
 
+  showMain(){
+    $('#LoginHTML').hide();
+    $('#MainHTML').show();
+  }
+
+  showSignUp(){
+    $('#LoginHTML').hide();
+    $('#SignHTML').show();
+  }
+
 }
