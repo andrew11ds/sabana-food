@@ -51,37 +51,37 @@ export class ManageClientsComponent implements OnInit {
 
 
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
-console.log(combo.value)
-console.log(number1.value)
-console.log(number2.value)
-console.log(number3.value)
+    console.log(combo.value)
+    console.log(number1.value)
+    console.log(number2.value)
+    console.log(number3.value)
 
-var address2 = combo.value
-var address2 = address2.concat('+',number1.value.toString(),'+',number2.value.toString())
-if (number3.value.toString() != '') {
-  var address2 = address2.concat('+',number3.value.toString())
-}
-console.log(address2);
-var address = address2
-var geojson=this.getGeoByAddress(address).results[0].geometry.location
-console.log(geojson)
-var lat=geojson.lat
-var lng=geojson.lng
-var rad= 500
-var restaurants:any =this.getRestaurantsByGeo(lat,lng,rad).results
-for (let i = 0; i < restaurants.length; i++) {
-    var restname= restaurants[i].name
-    var restaddress = restaurants[i].vicinity
-    var restaurant = this.getPartner(restname,restaddress)
-  if (restaurant!=null) {
-      this.items.push(restaurant[0])
-    }else{
-      console.log("no address")
+    var address2 = combo.value
+    var address2 = address2.concat('+',number1.value.toString(),'+',number2.value.toString())
+    if (number3.value.toString() != '') {
+      var address2 = address2.concat('+',number3.value.toString())
+    }
+    console.log(address2);
+    var address = address2
+    var geojson=this.getGeoByAddress(address).results[0].geometry.location
+    console.log(geojson)
+    var lat=geojson.lat
+    var lng=geojson.lng
+    var rad= 500
+    var restaurants:any =this.getRestaurantsByGeo(lat,lng,rad).results
+    for (let i = 0; i < restaurants.length; i++) {
+        var restname= restaurants[i].name
+        var restaddress = restaurants[i].vicinity
+        var restaurant = this.getPartner(restname,restaddress)
+      if (restaurant!=null) {
+          this.items.push(restaurant[0])
+      }else{
+        console.log("no address")
+
+      }
 
     }
-
-}
-console.log(this.items)
+    console.log(this.items)
 }
 getPartner(restaurant_name:string ,address:string){
   return JSON.parse($.ajax({
@@ -189,17 +189,34 @@ $.ajax({
   go2Main(){
     $('#ManageHTML').hide();
     $('#MainHTML').show();
-    $('#jqUser').val("");
-    $('#jqPass').val("");
-    $('#usuario').empty();
-    $('#correo').empty();
-    $('#cedula').empty();
+    $('#number1').val("");
+    $('#number2').val("");
+    $('#number3').val("");
+    $('#nameInputForm').val("");
+    for (const item in this.items) {
+      if (this.items.hasOwnProperty(item)) {
+        var id = this.items[item].Restaurant_ID;
+        $('#'+id).remove();
+      }
+    }
+    this.items=[];
   }
 
   isLogged(){
     if ($('#usuario').text() != "") {
       $('#ManageHTML').hide();
       $('#AfterHTML').show();
+      for (const item in this.items) {
+        if (this.items.hasOwnProperty(item)) {
+          var id = this.items[item].Restaurant_ID;
+          $('#'+id).remove();
+        }
+      }
+      this.items=[];
+      $('#number1').val("");
+      $('#number2').val("");
+      $('#number3').val("");
+      $('#nameInputForm').val("");
     }
 
   }

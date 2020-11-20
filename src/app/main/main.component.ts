@@ -63,7 +63,7 @@ export class MainComponent implements OnInit {
   go2Manage2(){
     $('#ManageHTML').show();
     $('#MainHTML').hide();
-    var input = $('#inputName').val();
+    var input = $('#inputName').val()+'';
     if (input != '') {
       $('#nameInputForm').val(input);
     }
