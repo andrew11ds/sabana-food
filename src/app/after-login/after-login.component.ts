@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from "../data.service";
 import { ChangeDetectorRef } from '@angular/core';
 
@@ -10,18 +10,19 @@ import { ChangeDetectorRef } from '@angular/core';
 export class AfterLoginComponent implements OnInit {
 
   items = [];
-  uName:string[] =[];
+  @Input() uName:string[] =[];
   constructor(private dataService: DataService, private cRef: ChangeDetectorRef) {
-   }
+  }
 
   ngOnInit(): void {
 
   }
 
-  loadUserInfo(name:any,email:any){
-    this.uName=name;
-    console.log(this.uName);
-    this.cRef.detectChanges();
+  hideAfter(){
+    $('#AfterLoginHTML').hide();
+    $('#LoginHTML').show();
+    $('#jqUser').val("");
+    $('#jqPass').val("");
   }
 
 }

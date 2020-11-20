@@ -10,7 +10,7 @@
         <a class="nav-link bg-danger text-white " routerLink="/manageclients" >Buscar Restaurante</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link bg-danger text-white " routerLink="/login" >Cerrar Sesión</a>
+        <a class="nav-link bg-danger text-white " (click)="hideAfter()">Cerrar Sesión</a>
       </li>
     </ul>
   </div>
@@ -24,8 +24,8 @@
       <div class="card border-danger mb-3 " style="max-width: 20rem;">
         <div class="card-body">
           <div class="card-header text-danger  mb-3 ">Perfil</div>
-          <p id="test" class="card-title text-danger ">{{ uName[0] }}</p>
-          <p class="card-text text-danger">Correo electrónico:
+          <p id="test" class="card-title text-danger ">Usuario: {{ uName[0] }}</p>
+          <p class="card-text text-danger">Correo electrónico: {{ uName[1] }}
           </p>
         </div>
       </div>
