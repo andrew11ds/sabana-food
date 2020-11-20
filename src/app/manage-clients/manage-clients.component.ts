@@ -18,6 +18,28 @@ export class ManageClientsComponent implements OnInit {
 
   }
 
+
+  addReserva(rID){
+
+      var rest = rID;
+      var user = $('#cedula').text();
+      var div =  user.split(" ");
+      var user = div[1];
+      console.log(user);
+
+      var today = new Date();
+      var datetime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'|'+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      $.ajax({
+        url: 'http://localhost/hotelSabana/src/php/addReserve2Db.php',
+        type: 'POST',
+        data: { user,rest,datetime},
+        success: function(response) {
+
+        }
+      });
+
+  }
+
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
 console.log(combo.value)
 console.log(number1.value)

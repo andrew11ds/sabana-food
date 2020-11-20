@@ -74,9 +74,12 @@
                           <div class="col-sm-12">
                             <div class="list-group-item">
                               <div class="card-body md-12">
-                                <h5 class="card-title">{{item.Restaurant_Name}}</h5>
-                                <p class="list-group-item">{{item.Address}}</p>
-                                <a href="#" class="btn btn-primary">${{item.Restaurant_Fee}}</a>
+                              <h6 class="invisible" id="{{item.Restaurant_ID}}" >{{item.Restaurant_ID}}</h6>
+                              <h5 class="card-title">{{item.Restaurant_Name}}</h5>
+                              <p class="list-group-item">{{item.Address}}</p>
+                              <p class="list-group-item">Quedan {{item.Tables_Available}} mesas disponibles</p>
+                              <p class="list-group-item">Valor Reserva: ${{item.Restaurant_Fee}}</p>
+                              <button id="{{item.Restaurant_ID}}" (click) = "addReserva(item.Restaurant_ID)" class="btn btn-primary">Reservar</button>
                               </div>
                             </div>
                           </div>

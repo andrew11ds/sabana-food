@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2020 at 02:30 AM
+-- Generation Time: Nov 20, 2020 at 11:48 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -31,12 +31,19 @@ USE `sabanafood_db`;
 
 CREATE TABLE `reservations` (
   `Reservation_ID` bigint(20) NOT NULL,
-  `User-ID` bigint(20) DEFAULT NULL,
-  `Restaurant-ID` bigint(20) DEFAULT NULL,
-  `Reservation_DateTime` datetime DEFAULT NULL,
-  `Status` varchar(50) DEFAULT NULL,
-  `#Tables` int(11) DEFAULT NULL
+  `User_ID` varchar(50) DEFAULT NULL,
+  `Restaurant_ID` bigint(20) DEFAULT NULL,
+  `Reservation_DateTime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`Reservation_ID`, `User_ID`, `Restaurant_ID`, `Reservation_DateTime`) VALUES
+(1, '48', 0, '2020-11-20 05:36:20'),
+(2, '48', 0, '2020-11-20 05:38:22'),
+(3, '0', 51, '2020-11-20 05:44:04');
 
 -- --------------------------------------------------------
 
@@ -164,7 +171,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `Reservation_ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `Reservation_ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `restaurants`

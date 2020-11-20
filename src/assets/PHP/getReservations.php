@@ -3,13 +3,12 @@
   header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
   header("Content-Type': 'application/json");
   require 'conexion.php';
-  $valor = $_POST['userName'];
-  $valor2 = $_POST['userPass'];
+  $user = $_POST['cedula'];
   $array = Array();
   $array=null;
 
   if(!empty($valor) && !empty($valor2)){
-    if ($resultado = $conn->query("SELECT User_FirstName, User_LastName, User_Email, User_ID FROM users where User_Email = '$valor' and User_Password = '$valor2'")) {
+    if ($resultado = $conn->query("SELECT Reservation_ID, Restaurant_Name, Reservation_DateTime FROM reservations join restaurants on reservations.Restaurant_ID = restaurants.Restaurant_ID where User_ID = '$user'")) {
         while ($t1 = $resultado ->fetch_assoc()) {
           $array[]=$t1;
         }

@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     if (userName.value != '' && userPass.value != '') {
       var userName = userName.value;
       var userPass = userPass.value;
-      var url = '../assets/PHP/login.php';
+      var url = 'http://localhost/hotelSabana/src/php/Login.php';
 
       function getJson(url:any) {
           return JSON.parse($.ajax({
@@ -48,9 +48,11 @@ export class LoginComponent implements OnInit {
       if(myJsonObj!=null){
         this.uName[0]=myJsonObj[0].User_FirstName + myJsonObj[0].User_LastName;
         this.uName[1]=myJsonObj[0].User_Email;
+        this.uName[2]=myJsonObj[0].User_ID;
         if ($('#usuario').text()=="" && $('#correo').text()=="") {
           $('#usuario').append('Usuario: '+this.uName[0]);
           $('#correo').append('Correo: '+this.uName[1])
+          $('#cedula').append('Cedula: '+this.uName[2])
         }
         $('#LoginHTML').hide();
         $('#AfterHTML').show();
