@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
 
   get padding(): any{
     var y=screen.height;
-    var finalpad= Math.ceil((y*250/768))+'px';
+    var finalpad= Math.ceil((y*10/768))+'px';
     return{
       'padding-top':finalpad
     };
