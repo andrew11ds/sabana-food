@@ -26,11 +26,17 @@ export class AfterLoginComponent implements OnInit {
     $('#LoginHTML').show();
     $('#jqUser').val("");
     $('#jqPass').val("");
+    $('#usuario').empty();
   }
 
   go2Manage2(){
     $('#ManageHTML').show();
     $('#AfterHTML').hide();
+  }
+
+  toMain(){
+    $('#AfterHTML').hide();
+    $('#MainHTML').show();
   }
 
 }

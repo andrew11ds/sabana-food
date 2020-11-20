@@ -48,6 +48,10 @@ export class LoginComponent implements OnInit {
       if(myJsonObj!=null){
         this.uName[0]=myJsonObj[0].User_FirstName + myJsonObj[0].User_LastName;
         this.uName[1]=myJsonObj[0].User_Email;
+        if ($('#usuario').text()=="" && $('#correo').text()=="") {
+          $('#usuario').append('Usuario: '+this.uName[0]);
+          $('#correo').append('Correo: '+this.uName[1])
+        }
         $('#LoginHTML').hide();
         $('#AfterHTML').show();
       }else{

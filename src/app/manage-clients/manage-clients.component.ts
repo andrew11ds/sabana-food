@@ -227,4 +227,12 @@ $.ajax({
     $('#MainHTML').show();
   }
 
+  isLogged(){
+    if ($('#usuario').text() != "") {
+      $('#ManageHTML').hide();
+      $('#AfterHTML').show();
+    }
+
+  }
+
 }

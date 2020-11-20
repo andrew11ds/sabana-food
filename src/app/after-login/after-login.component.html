@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-light">
   <div class="container">
-      <h1 class="btn" ><img  class="navbar-brand" src="../assets/Icon/Logo5.png"></h1>
+      <h1 class="btn" (click)="toMain()"><img  class="navbar-brand" src="../assets/Icon/Logo5.png"></h1>
     <ul class="nav nav-pills">
       <li class="nav-item">
         <a class="nav-link bg-danger text-white">Perfil</a>
@@ -21,11 +21,10 @@
 <div class="container-content col-md-3">
     <div class=" offset-md-1 " style="margin-top: 10%;">
       <div class="card border-danger mb-3 " style="max-width: 20rem;">
+        <div class="card-header text-danger  mb-3 ">Perfil</div>
         <div class="card-body">
-          <div class="card-header text-danger  mb-3 ">Perfil</div>
-          <p id="test" class="card-title text-danger ">Usuario: {{ uName[0] }}</p>
-          <p class="card-text text-danger">Correo electrónico: {{ uName[1] }}
-          </p>
+          <p id="usuario" class="card-title text-danger "></p>
+          <p id="correo" class="card-text text-danger"></p>
         </div>
       </div>
     </div>
