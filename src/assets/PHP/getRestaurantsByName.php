@@ -7,7 +7,7 @@
   $array = Array();
   $array=null;
 
-  if(!empty($name){
+  if(!empty($name)){
     if ($resultado = $conn->query("SELECT * FROM restaurants where Restaurant_Name LIKE '$name%'")) {
         while ($t1 = $resultado ->fetch_assoc()) {
           $array[]=$t1;

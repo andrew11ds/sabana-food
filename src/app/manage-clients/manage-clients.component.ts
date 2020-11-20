@@ -21,6 +21,48 @@ export class ManageClientsComponent implements OnInit {
     $('#alerta3').hide();
   }
 
+
+
+
+  getRestaurantsN(nameInputRest:any){
+
+    for (const item in this.items) {
+      if (this.items.hasOwnProperty(item)) {
+        var id = this.items[item].Restaurant_ID;
+        $('#'+id).remove();
+      }
+    }
+    this.items=[];
+
+  var restaurants=this.getSimilarRestaurants(nameInputRest.value+'')
+  if(restaurants!=null){
+    for (let i = 0; i < restaurants.length; i++) {
+      if (restaurants[i]!=null) {
+          this.items.push(restaurants[i])
+      }
+
+    }
+  }else{
+    console.log(restaurants)
+  }
+
+  }
+
+
+  getSimilarRestaurants(restaurant_name:string){
+    return JSON.parse($.ajax({
+      url: 'http://localhost/hotelSabana/src/php/getRestaurantsByName.php', //'http://localhost/hotelSabana/src/php/getRestDb.php'
+      type: 'POST',
+      global: false,
+      async: false,
+      data: {restaurant_name},
+      success: function(response) {
+          return response
+      }
+   }).responseText);
+  }
+
+
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
     console.log(combo.value)
     console.log(number1.value)

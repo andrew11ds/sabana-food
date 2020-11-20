@@ -62,10 +62,10 @@
             </div>
             <div id="nameRestForm" class="form-row">
               <div class="col-12 col-md-8 mb-2 mb-md-0">
-                <input id="nameInputForm" type="email" class="form-control" placeholder="Enter...">
+                <input #nameInputRest id="nameInputForm" type="email" class="form-control" placeholder="Enter...">
               </div>
               <div class="col-12 col-md-4">
-                <button type="button" class="btn btn-block btn-danger" >Buscar!</button>
+                <button (click)="getRestaurantsN(nameInputRest)"type="button" class="btn btn-block btn-danger" >Buscar!</button>
               </div>
           </div>
         </form>
