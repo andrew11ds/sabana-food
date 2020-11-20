@@ -24,11 +24,27 @@ export class SingUpComponent implements OnInit {
     var fCed = ced.value;
     var fPass = pass.value;
 
-    var result;
-    this.data.addUser2Db(fName,fLastName,fEmail,fCed,fPass).subscribe(val => result = val);
-    if(result==null){
+    if ( fName != "" && fLastName != "" && fEmail != "" && fCed != "" && fPass != "") {
+      $.ajax({
+          type: 'POST',
+          url: 'http://localhost/hotelSabana/src/php/addUser2Db.php',
+          data: {fName,fLastName,fEmail,fCed,fPass},
+          success: function (response) {
+          }
+      });
+      $('#sgupFN').val("");
+      $('#sgupLN').val("");
+      $('#sgupEM').val("");
+      $('#sgupCD').val("");
+      $('#sgupPS').val("");
       $('#SignHTML').hide();
       $('#LoginHTML').show();
+    }else{
+      $('#alertSuccess').show();
+      $('#alertSuccess').fadeIn();
+      setTimeout(function() {
+           $("#alertSuccess").fadeOut();
+      },2000);
     }
   }
 
@@ -40,6 +56,11 @@ export class SingUpComponent implements OnInit {
   back2Main(){
     $('#MainHTML').show();
     $('#SignHTML').hide();
+  }
+
+  closeSign(){
+    $('#SignHTML').hide();
+    $('#LoginHTML').show();
   }
 
 }

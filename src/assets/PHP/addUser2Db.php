@@ -3,13 +3,11 @@
   header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
   header("Content-Type': 'application/json");
   require 'conexion.php';
-  $json = file_get_contents('php://input');
-  $params = json_decode($json);
-  $name = $params->fName;
-  $lastname = $params->fLastName;
-  $email = $params -> fEmail;
-  $ced = $params -> fCed;
-  $pass = $params -> fPass;
+  $name = $_POST['fName'];
+  $lastname = $_POST['fLastName'];
+  $email = $_POST['fEmail'];
+  $ced = $_POST['fCed'];
+  $pass = $_POST['fPass'];
 
   if(isset($name)){
 
@@ -21,7 +19,6 @@
       die('query failed');
     }
 
-    echo null;
   }
 
 ?>

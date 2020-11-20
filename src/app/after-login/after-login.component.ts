@@ -22,7 +22,7 @@ export class AfterLoginComponent implements OnInit {
   }
 
   hideAfter(){
-    $('#AfterLoginHTML').hide();
+    $('#AfterHTML').hide();
     $('#LoginHTML').show();
     $('#jqUser').val("");
     $('#jqPass').val("");

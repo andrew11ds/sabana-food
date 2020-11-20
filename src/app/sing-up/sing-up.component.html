@@ -17,7 +17,7 @@
                     <div class="col-md-6">
                       <h1 class="text-danger text-center">SIGN UP</h1>
                     </div>
-                    <button [routerLink]="['/']" type="button" class="close" style="margin-left:278px; margin-top:-50px" aria-label="Close">
+                    <button (click)="closeSign()" type="button" class="close" style="margin-left:278px; margin-top:-50px" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
@@ -25,7 +25,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Nombre</label>
-                        <input #name type="text" placeholder="Escriba su primer nombre" class="form-control form-control-sm" id="firstName" value="">
+                        <input #name id="sgupFN" type="text" placeholder="Escriba su primer nombre" class="form-control form-control-sm" value="">
                       </div>
                     </div>
                   </div>
@@ -33,7 +33,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Apellido</label>
-                        <input #lastName type="text" placeholder="Escriba su segundo nombre" class="form-control form-control-sm" id="secondName" value="">
+                        <input #lastName id="sgupLN" type="text" placeholder="Escriba su segundo nombre" class="form-control form-control-sm"  value="">
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-6 ">
@@ -45,7 +45,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Correo electrónico</label>
-                        <input #email type="text" placeholder="Escriba su correo electrónico" class="form-control form-control-sm" id="email" value="">
+                        <input #email id="sgupEM" type="text" placeholder="Escriba su correo electrónico" class="form-control form-control-sm"  value="">
                       </div>
                     </div>
                   </div>
@@ -53,7 +53,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Número de cedula</label>
-                        <input #ced type="text" placeholder="Digite su número cedula" class="form-control form-control-sm" id="phone" value="">
+                        <input #ced id="sgupCD" type="text" placeholder="Digite su número cedula" class="form-control form-control-sm"  value="">
                       </div>
                     </div>
                   </div>
@@ -61,7 +61,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="firstNameM" >Contraseña</label>
-                        <input #pass type="password" placeholder="Escriba su contraseña" class="form-control form-control-sm" id="phone" value="">
+                        <input #pass id="sgupPS" type="password" placeholder="Escriba su contraseña" class="form-control form-control-sm"  value="">
                       </div>
                     </div>
                   </div>
@@ -70,6 +70,10 @@
                       <div class="col text-center">
                         <button (click) = "addUser(name,lastName,email,ced,pass)" class="btn btn-danger regular-button"> Registrarse </button>
                       </div>
+                    </div>
+                    <div id="alertSuccess" class="alert alert-dismissible alert-secondary" style="position:absolute; margin-left: 50%;">
+                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                      <strong>Oh snap!</strong> No rellenó todos los campos!
                     </div>
                   </div>
                 </div>
