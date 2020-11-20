@@ -27,6 +27,7 @@ export class AfterLoginComponent implements OnInit {
     $('#jqUser').val("");
     $('#jqPass').val("");
     $('#usuario').empty();
+    $('#correo').empty();
   }
 
   go2Manage2(){

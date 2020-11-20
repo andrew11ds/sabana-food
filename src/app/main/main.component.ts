@@ -35,6 +35,9 @@ export class MainComponent implements OnInit {
   go2Manage(){
     $('#ManageHTML').show();
     $('#MainHTML').hide();
+    $('#number1').val($('#number1Main').val());
+    $('#number2').val($('#number2Main').val());
+    $('#number3').val($('#number3Main').val());
   }
 
 }
