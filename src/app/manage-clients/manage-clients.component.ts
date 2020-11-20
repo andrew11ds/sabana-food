@@ -11,92 +11,13 @@ export class ManageClientsComponent implements OnInit {
   items:any[] = [];
 
   constructor(private dataService: DataService) {
-    //this.items=[]
     $('#ManageHTML').hide();
   }
 
   ngOnInit(): void {
-    /*var newOb=this.dataService.getcoordByAddress()//Lat,lng
-    newOb.subscribe(val =>{
-      var lat=val.results[0].geometry.location.lat
-      var lng=val.results[0].geometry.location.lng
-     var rad=500 //Radius should be variable
 
-
-      //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lat,$lng&radius=$rad&type=restaurant&key=AIzaSyChDeekoou6-EnjGXvYPLeB1YuY_qXgHec
-      var restOb =this.dataService.getRestByAddress(lat,lng,rad)//Gets address by lat,lng,rad
-      restOb.subscribe(val2 =>{
-        var restaurants=val2.results
-        for (let i = 0; i < restaurants.length; i++) {
-          console.log(restaurants[i])
-          this.items.push(restaurants[i])//displays restaurants
-
-        }
-
-
-      //  this.items.push(val2)
-
-    })
-  })*/
   }
-/*
-getRestaurants(){
-  this.items=[]
-  var k=[]
-  var address = 'Calle+72+43'
-  $.ajax({
-    url: 'http://localhost/hotelSabana/src/php/getGeoByAddress.php',
-    type: 'POST',
-    data: { address },
-    success: function(response) {
-      if (response != null) {
-        var geojson = JSON.parse(response).results[0].geometry.location
-        var lat = geojson.lat
-        var lng = geojson.lng
-        var rad = 500
-        console.log(lat, lng)
-        $.ajax({
-          url: 'http://localhost/hotelSabana/src/php/getRestByGeo.php',
-          type: 'POST',
-          data: { lat, lng, rad },
-          success: function(response) {
-            if (response != null) {
-              var restaurants = JSON.parse(response).results
-              for (let i = 0; i < restaurants.length; i++) {
-                var restaurant_name = restaurants[i].name
-                var address = restaurants[i].vicinity
-                console.log(restaurant_name, address)
-                if (address != "") {
-                  $.ajax({
-                    url: 'http://localhost/hotelSabana/src/php/getRestDb.php',
-                    type: 'POST',
-                    data: { restaurant_name, address },
-                    success: function(response) {
-                      if (response != null) {
-                        var restaurant=JSON.parse(response)
-                        //this.items.push(restaurant)
-                        k.push(restaurant)
-                        console.log(restaurant)
-                        this.items.push(restaurant)
-                      }
 
-
-                    }
-
-                  })
-                } else {
-                  console.log("No address")
-                }
-              }
-            }
-          }
-
-        })
-      }
-    }
-  });
-}
-*/
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
 console.log(combo.value)
 console.log(number1.value)
@@ -105,15 +26,11 @@ console.log(number3.value)
 
 var address2 = combo.value
 var address2 = address2.concat('+',number1.value.toString(),'+',number2.value.toString())
-if (number2.value.toString() != '') {
+if (number3.value.toString() != '') {
   var address2 = address2.concat('+',number3.value.toString())
 }
 console.log(address2);
-
-
-var address = 'Calle+72+43'
-address = address2
-
+var address = address2
 var geojson=this.getGeoByAddress(address).results[0].geometry.location
 console.log(geojson)
 var lat=geojson.lat
@@ -136,7 +53,7 @@ console.log(this.items)
 }
 getPartner(restaurant_name:string ,address:string){
   return JSON.parse($.ajax({
-    url: 'http://localhost/hotelSabana/src/php/getRestDb.php',
+    url: '../assets/PHP/getRestDb.php', //'http://localhost/hotelSabana/src/php/getRestDb.php'
     type: 'POST',
     global: false,
     async: false,
@@ -148,7 +65,7 @@ getPartner(restaurant_name:string ,address:string){
 }
 getRestaurantsByGeo(lat:any,lng:any,rad:any){
   return JSON.parse($.ajax({
-   url: 'http://localhost/hotelSabana/src/php/getRestByGeo.php',
+   url: '../assets/PHP/getRestByGeo.php', //'http://localhost/hotelSabana/src/php/getRestByGeo.php'
    type: 'POST',
    global: false,
    async: false,
@@ -161,7 +78,7 @@ getRestaurantsByGeo(lat:any,lng:any,rad:any){
 
 getGeoByAddress(address:string){
    return JSON.parse($.ajax({
-    url: 'http://localhost/hotelSabana/src/php/getGeoByAddress.php',
+    url: '../assets/PHP/getGeoByAddress.php', //'http://localhost/hotelSabana/src/php/getGeoByAddress.php'
     type: 'POST',
     global: false,
     async: false,
@@ -175,7 +92,7 @@ getGeoByAddress(address:string){
 
 
 /*
-getR(){ //This class is ONLY FOR ADDING NEW RESTAURANTS TO THE DATABASE
+getR(){ //This method is ONLY FOR ADDING NEW RESTAURANTS TO THE DATABASE, LEAVE IT COMMENTED!
  var address = 'Calle+72+43'
 //var address= 'Calle+70b+32'
 
