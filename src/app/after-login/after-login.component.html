@@ -39,20 +39,13 @@
                   <div class="row">
                 <div class="container p-4">
                   <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                      <div *ngFor="let item of items; let i = index">
-                        <div *ngIf="true">
-                          <div class="col-sm-12">
-                            <div class="list-group-item">
-                              <div class="card-body bg-light md-12">
-                                <h5 class="card-title text-dark ">{{item}}</h5>
-                                <p class="list-group-item">{{item}}</p>
-                                </div>
-
-                            </div>
-                          </div>
-                        </div>
+                      <div id="reservationContent">
+                        <table class="table table-hover">
+                            <tbody id="tableBody">
+                            </tbody>
+                          </table>
                       </div>
-                    </div>
+                  </div>
               </div>
               </div>
       </div>

@@ -29,6 +29,7 @@ export class AfterLoginComponent implements OnInit {
     $('#usuario').empty();
     $('#correo').empty();
     $('#cedula').empty();
+    $('#tableBody').empty();
   }
 
   go2Manage2(){

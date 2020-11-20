@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     if (userName.value != '' && userPass.value != '') {
       var userName = userName.value;
       var userPass = userPass.value;
-      var url = 'http://localhost/hotelSabana/src/php/Login.php';
+      var url = 'http://localhost/hotelSabana/src/php/login.php';
 
       function getJson(url:any) {
           return JSON.parse($.ajax({
@@ -58,6 +58,8 @@ export class LoginComponent implements OnInit {
         }
         $('#LoginHTML').hide();
         $('#AfterHTML').show();
+
+        this.loadReservation(this.uName[2]);
       }else{
         $('#jqUser').addClass('is-invalid');
         $('#jqPass').addClass('is-invalid');
@@ -83,6 +85,28 @@ export class LoginComponent implements OnInit {
     $('#LoginHTML').hide();
     $('#SignHTML').show();
     $('#alertSuccess').hide();
+  }
+
+  loadReservation(cedula:any){
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost/hotelSabana/src/php/getReservations.php',
+        data: {cedula},
+        success: function (response) {
+          var results = JSON.parse(response);
+          console.log(response);
+          $('#tableBody').empty();
+          for (const item in results) {
+            if (results.hasOwnProperty(item)) {
+              var id = results[item].Reservation_ID;
+              var name = results[item].Restaurant_Name;
+              var date = results[item].Reservation_DateTime;
+              $('#tableBody').append('<tr class="table-light"><td>'+id+'</td><td>'+name+'</td><td>'+date+'</td></tr>');
+            }
+          }
+        }
+    })
+
   }
 
 }

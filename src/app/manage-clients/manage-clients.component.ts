@@ -219,6 +219,8 @@ $.ajax({
     if ($('#usuario').text() != "") {
       $('#ManageHTML').hide();
       $('#AfterHTML').show();
+      var test = $('#cedula').text().split(" ");
+      this.loadReservation2(test[1])
       for (const item in this.items) {
         if (this.items.hasOwnProperty(item)) {
           var id = this.items[item].Restaurant_ID;
@@ -294,6 +296,28 @@ $.ajax({
       },1700);
     }
     }
+  }
+
+  loadReservation2(cedula:any){
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost/hotelSabana/src/php/getReservations.php',
+        data: {cedula},
+        success: function (response) {
+          var results = JSON.parse(response);
+          console.log(response);
+          $('#tableBody').empty();
+          for (const item in results) {
+            if (results.hasOwnProperty(item)) {
+              var id = results[item].Reservation_ID;
+              var name = results[item].Restaurant_Name;
+              var date = results[item].Reservation_DateTime;
+              $('#tableBody').append('<tr class="table-light"><td>'+id+'</td><td>'+name+'</td><td>'+date+'</td></tr>');
+            }
+          }
+        }
+    })
+
   }
 
 }
