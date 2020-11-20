@@ -16,39 +16,10 @@ export class ManageClientsComponent implements OnInit {
 
   ngOnInit(): void {
     $('#nameRestForm').hide();
+    $('#alerta1').hide();
+    $('#alerta2').hide();
+    $('#alerta3').hide();
   }
-
-  addReserva(rID:any,taba:any){
-        var taba = taba;
-        var rest = rID;
-        var user = $('#cedula').text();
-        var div =  user.split(" ");
-        var user = div[1];
-        var today = new Date();
-        var datetime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'|'+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-
-        if(user == null ){
-        console.log(user);
-        $('#alerta').show();
-        $('#alerta').fadeIn();
-        setTimeout(function() {
-             $("#alerta").fadeOut();
-        },1000);
-
-  }else{
-    if(taba > 0 ){
-    $.ajax({
-      url: 'http://localhost/hotelSabana/src/php/addReserve2Db.php',
-      type: 'POST',
-      data: { user,rest,datetime},
-      success: function(response) {
-      }
-
-      });
-    }
-    }
-  }
-
 
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
     console.log(combo.value)
@@ -219,6 +190,68 @@ $.ajax({
       $('#nameInputForm').val("");
     }
 
+  }
+
+  go2login(){
+    $('#ManageHTML').hide();
+    $('#LoginHTML').show();
+    $('#jqUser').val("");
+    $('#jqPass').val("");
+    $('#usuario').empty();
+    $('#correo').empty();
+    $('#cedula').empty();
+    $('#number1').val("");
+    $('#number2').val("");
+    $('#number3').val("");
+    $('#nameInputForm').val("");
+    for (const item in this.items) {
+      if (this.items.hasOwnProperty(item)) {
+        var id = this.items[item].Restaurant_ID;
+        $('#'+id).remove();
+      }
+    }
+    this.items=[];
+  }
+
+  addReserva(rID:any,taba:any){
+        var taba = taba;
+        var rest = rID;
+        var user = $('#cedula').text();
+        var div =  user.split(" ");
+        var user = div[1];
+        var today = new Date();
+        var datetime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'|'+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+        if(user == null ){
+        console.log(user);
+        $('#alerta').show();
+        $('#alerta').fadeIn();
+        setTimeout(function() {
+             $("#alerta").fadeOut();
+        },1700);
+
+  }else{
+    if(taba > 0 ){
+    $.ajax({
+      url: 'http://localhost/hotelSabana/src/php/addReserve2Db.php',
+      type: 'POST',
+      data: { user,rest,datetime},
+      success: function(response) {
+      }
+      });
+      $('#alerta3').show();
+      $('#alerta3').fadeIn();
+      setTimeout(function() {
+           $("#alerta3").fadeOut();
+      },1700);
+    }else{
+      $('#alerta2').show();
+      $('#alerta2').fadeIn();
+      setTimeout(function() {
+           $("#alerta2").fadeOut();
+      },1700);
+    }
+    }
   }
 
 }

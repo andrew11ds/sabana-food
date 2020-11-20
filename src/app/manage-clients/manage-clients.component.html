@@ -5,14 +5,15 @@
       <h1 class="btn" (click)="go2Main()" ><img  class="navbar-brand" src="../assets/Icon/Logo5.png"></h1>
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link bg-danger text-white" (click)="isLogged()" >Perfil</a>
+        <a class="nav-link bg-danger text-white" id="perfil" (click)="isLogged()" >Perfil</a>
       </li>
-    <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link bg-danger text-white "  >Buscar Restaurante</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link bg-danger text-white " >Cerrar Sesión</a>
+        <a class="nav-link bg-danger text-white " id="cerrar" (click)="go2login()" >Cerrar Sesión</a>
       </li>
+
     </ul>
   </div>
 </nav>
@@ -106,9 +107,17 @@
 
 
       </div>
-      <div id="alerta" class="alert alert-dismissible alert-secondary" style="position:absolute; margin-left: 50%;">
+      <div id="alerta" class="alert alert-dismissible alert-secondary" style="position:absolute; margin-left: 30%; margin-top:250px">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Por favor inicie sesión antes de continuar</strong>
+      </div>
+      <div id="alerta2" class="alert alert-dismissible alert-secondary" style="position:absolute; margin-left: 30%; margin-top:250px">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>No hay mesas disponibles</strong>
+      </div>
+      <div id="alerta3" class="alert alert-dismissible alert-secondary" style="position:absolute; margin-left: 30%; margin-top:250px">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>¡¡Felicidades, su reserva se ha realizado satisfactoriamente!!</strong>
       </div>
     </div>
   </div>

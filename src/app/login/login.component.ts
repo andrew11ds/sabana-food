@@ -53,6 +53,8 @@ export class LoginComponent implements OnInit {
           $('#usuario').append('Usuario: '+this.uName[0]);
           $('#correo').append('Correo: '+this.uName[1])
           $('#cedula').append('Cedula: '+this.uName[2])
+          $('#pefil').show();
+          $('#cerrar').show();
         }
         $('#LoginHTML').hide();
         $('#AfterHTML').show();

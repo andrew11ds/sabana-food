@@ -55,6 +55,11 @@ export class MainComponent implements OnInit {
       $('#number3').val(n3)
     }
 
+    var test  =$('#cedula').val()+'';
+    if (test=='') {
+      $('#cerrar').hide();
+      $('#perfil').hide();
+    }
     //  $('#number2').val($('#number2Main').val());
     //  $('#number3').val($('#number3Main').val());
 
@@ -66,6 +71,11 @@ export class MainComponent implements OnInit {
     var input = $('#inputName').val()+'';
     if (input != '') {
       $('#nameInputForm').val(input);
+    }
+    var test  =$('#cedula').val()+'';
+    if (test=='') {
+      $('#cerrar').hide();
+      $('#perfil').hide();
     }
   }
 
