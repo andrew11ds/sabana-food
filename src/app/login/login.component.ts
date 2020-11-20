@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     if (userName.value != '' && userPass.value != '') {
       var userName = userName.value;
       var userPass = userPass.value;
-      var url = 'http://localhost/hotelSabana/src/php/login.php';
+      var url = '../assets/PHP/login.php';
 
       function getJson(url:any) {
           return JSON.parse($.ajax({
