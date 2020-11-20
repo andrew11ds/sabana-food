@@ -12,14 +12,6 @@ import { SingUpComponent } from './sing-up/sing-up.component';
 import { ManageClientsComponent } from './manage-clients/manage-clients.component';
 import { AfterLoginComponent } from './after-login/after-login.component';
 
-const routes = [
-  {path: '', component: MainComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SingUpComponent},
-  {path: 'manageclients', component: ManageClientsComponent},
-  {path: 'afterlogin', component: AfterLoginComponent}
-
-];
 
 @NgModule({
   declarations: [
@@ -33,7 +25,6 @@ const routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes),
     HttpClientModule
   ],
   providers: [DataService,AfterLoginComponent],

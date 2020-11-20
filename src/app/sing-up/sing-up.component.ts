@@ -27,7 +27,8 @@ export class SingUpComponent implements OnInit {
     var result;
     this.data.addUser2Db(fName,fLastName,fEmail,fCed,fPass).subscribe(val => result = val);
     if(result==null){
-      this.router.navigate(['/login']);
+      $('#SignHTML').hide();
+      $('#LoginHTML').show();
     }
   }
 

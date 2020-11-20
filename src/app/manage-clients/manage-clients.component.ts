@@ -221,4 +221,10 @@ $.ajax({
 });
 }
 */
+
+  go2Main(){
+    $('#ManageHTML').hide();
+    $('#MainHTML').show();
+  }
+
 }

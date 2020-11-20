@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         this.uName[0]=myJsonObj[0].User_FirstName + myJsonObj[0].User_LastName;
         this.uName[1]=myJsonObj[0].User_Email;
         $('#LoginHTML').hide();
-        $('#AfterLoginHTML').show();
+        $('#AfterHTML').show();
       }else{
         $('#jqUser').addClass('is-invalid');
         $('#jqPass').addClass('is-invalid');
