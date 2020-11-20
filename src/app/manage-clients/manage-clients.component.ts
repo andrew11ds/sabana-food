@@ -109,7 +109,7 @@ for (let i = 0; i < restaurants.length; i++) {
     var restaddress = restaurants[i].vicinity
     var restaurant = this.getPartner(restname,restaddress)
   if (restaurant!=null) {
-      this.items.push(restaurant)
+      this.items.push(restaurant[0])
     }else{
       console.log("no address")
 
