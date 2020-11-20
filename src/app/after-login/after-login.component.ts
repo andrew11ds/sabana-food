@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from "../data.service";
 import { ChangeDetectorRef } from '@angular/core';
+import * as $ from "jquery";
+
 
 @Component({
   selector: 'app-after-login',
@@ -12,6 +14,7 @@ export class AfterLoginComponent implements OnInit {
   items = [];
   @Input() uName:string[] =[];
   constructor(private dataService: DataService, private cRef: ChangeDetectorRef) {
+    $('#AfterHTML').hide();
   }
 
   ngOnInit(): void {

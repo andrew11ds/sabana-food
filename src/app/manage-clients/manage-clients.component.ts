@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { DataService } from "../data.service";
 import * as $ from "jquery";
 @Component({
@@ -12,6 +12,7 @@ export class ManageClientsComponent implements OnInit {
 
   constructor(private dataService: DataService) {
     //this.items=[]
+    $('#ManageHTML').hide();
   }
 
   ngOnInit(): void {

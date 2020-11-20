@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,Input } from '@angular/core';
 import { DataService } from "../data.service";
 import { Router } from "@angular/router";
 import { AfterLoginComponent } from '../after-login/after-login.component';
@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   uName:string[]=[];
 
   constructor(private data: DataService, private router: Router, private afterLogin: AfterLoginComponent) {
+    $('#LoginHTML').hide();
   }
 
   ngOnInit(): void {

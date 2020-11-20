@@ -1,47 +1,40 @@
-<div id="LoginHTML" class="">
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-      <div class="container">
-        <h1 class="btn" routerLink="/"><img  class="navbar-brand" src="../assets/Icon/Logo5.png"></h1>
-        <a class="btn btn-danger">Sign In</a>
-      </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-light">
+    <div class="container">
+      <h1 class="btn" routerLink="/"><img  class="navbar-brand" src="../assets/Icon/Logo5.png"></h1>
+      <a class="btn btn-danger">Sign In</a>
+    </div>
+  </nav>
 
-    <!-- Masthead -->
-    <img src="../assets/fondo5.png" class = "img-responsive position-absolute mx-auto d-block"/>
-    <header class="masthead text-white text-center">
-      <div class="container-content p-4" >
-        <div class="modal-dialog text-center " style=" margin-top: 10%;">
-            <div class="col-sm-8" style="margin:0 auto; margin-top:25%">
-              <div class="modal-content p-4">
-                  <div class="col-12 login-img p-3">
-                      <img src="../assets/Icon/log-ico.png" style="height: 100px; width: 120px;">
-                  </div>
-                  <form class="col-12" >
-                      <div class="forms-group p-1">
-                          <img src="../assets/Icon/person-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
-                          <input id="jqUser" #userName (click)="removeInvalid()" type="text" class="form-control" placeholder="Nombre de usuario" style="padding-left:40px;">
-                      </div>
-                      <div id="formpass" class="forms-group p-2">
-                          <img src="../assets/Icon/lock-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
-                          <input id="jqPass" #userPass (click)="removeInvalid()" type="password" class="form-control" placeholder="Contraseña" style="padding-left:36px;">
-                          <div class="invalid-feedback">Sorry, username or password incorrect!</div>
-                      </div>
-                      <div>
-                      <button (click) = "Login(userName,userPass)" id="ingresar" type="button" class="btn btn-danger">Ingresar</button>
-                      </div>
-                      <div>
-                        <button type="button" class="btn btn-link" routerLink="/signup">¿Aún no tiene una cuenta?</button>
-                      </div>
-                  </form>
-              </div>
+  <!-- Masthead -->
+  <img src="../assets/fondo5.png" class = "img-responsive position-absolute mx-auto d-block"/>
+  <header class="masthead text-white text-center">
+    <div class="container-content p-4" >
+      <div class="modal-dialog text-center " style=" margin-top: 10%;">
+          <div class="col-sm-8" style="margin:0 auto; margin-top:25%">
+            <div class="modal-content p-4">
+                <div class="col-12 login-img p-3">
+                    <img src="../assets/Icon/log-ico.png" style="height: 100px; width: 120px;">
+                </div>
+                <form class="col-12" >
+                    <div class="forms-group p-1">
+                        <img src="../assets/Icon/person-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
+                        <input id="jqUser" #userName (click)="removeInvalid()" type="text" class="form-control" placeholder="Nombre de usuario" style="padding-left:40px;">
+                    </div>
+                    <div id="formpass" class="forms-group p-2">
+                        <img src="../assets/Icon/lock-24px.svg" style="position:absolute; left:30px; padding-top:6px; font-size: 18px">
+                        <input id="jqPass" #userPass (click)="removeInvalid()" type="password" class="form-control" placeholder="Contraseña" style="padding-left:36px;">
+                        <div class="invalid-feedback">Sorry, username or password incorrect!</div>
+                    </div>
+                    <div>
+                    <button (click) = "Login(userName,userPass)" id="ingresar" type="button" class="btn btn-danger">Ingresar</button>
+                    </div>
+                    <div>
+                      <button type="button" class="btn btn-link" routerLink="/signup">¿Aún no tiene una cuenta?</button>
+                    </div>
+                </form>
             </div>
-        </div>
-        </div>
-    </header>
-
-</div>
-
-<div id="AfterLoginHTML" class="">
-  <app-after-login  [uName]="uName"></app-after-login>
-</div>
+          </div>
+      </div>
+      </div>
+  </header>

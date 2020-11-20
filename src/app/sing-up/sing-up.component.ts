@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { DataService } from "../data.service";
 import { Router } from "@angular/router";
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-sing-up',
@@ -9,7 +10,9 @@ import { Router } from "@angular/router";
 })
 export class SingUpComponent implements OnInit {
 
-  constructor(private data:DataService, private router:Router) { }
+  constructor(private data:DataService, private router:Router) {
+    $('#SignHTML').hide();
+  }
 
   ngOnInit(): void {
   }

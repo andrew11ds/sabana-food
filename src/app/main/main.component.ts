@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { DataService } from "../data.service";
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-main',
@@ -24,6 +25,11 @@ export class MainComponent implements OnInit {
     return{
       'padding-top':finalpad
     };
+  }
+
+  hideMain(){
+    $('#MainHTML').hide();
+    $('#LoginHTML').show();
   }
 
 }
