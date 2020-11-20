@@ -79,7 +79,7 @@
                               <p class="list-group-item">{{item.Address}}</p>
                               <p class="list-group-item">Quedan {{item.Tables_Available}} mesas disponibles</p>
                               <p class="list-group-item">Valor Reserva: ${{item.Restaurant_Fee}}</p>
-                              <button id="{{item.Restaurant_ID}}" (click) = "addReserva(item.Restaurant_ID)" class="btn btn-primary">Reservar</button>
+                              <button id="{{item.Restaurant_ID}}" (click) = "addReserva(item.Restaurant_ID,item.Tables_Available)" class="btn btn-primary">Reservar</button>
                               </div>
                             </div>
                           </div>
@@ -96,9 +96,9 @@
 
 
       </div>
-      <div id="alertSuccess" class="alert alert-dismissible alert-secondary" style="position:absolute; margin-left: 50%;">
+      <div id="alerta" class="alert alert-dismissible alert-secondary" style="position:absolute; margin-left: 50%;">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Oh snap!</strong> No rellenó todos los campos!
+        <strong>Por favor inicie sesión antes de continuar</strong>
       </div>
     </div>
   </div>

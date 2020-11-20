@@ -18,30 +18,37 @@ export class ManageClientsComponent implements OnInit {
 
   }
 
+  addReserva(rID:any,taba:any){
+        var taba = taba;
+        var rest = rID;
+        var user = $('#cedula').text();
+        var div =  user.split(" ");
+        var user = div[1];
+        var today = new Date();
+        var datetime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'|'+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-  addReserva(rID:any){
+        if(user == null ){
+        console.log(user);
+        $('#alerta').show();
+        $('#alerta').fadeIn();
+        setTimeout(function() {
+             $("#alerta").fadeOut();
+        },1000);
 
-      var rest = rID;
-      var user = $('#cedula').text();
-    if(user != ""){
-      var div =  user.split(" ");
-      var user = div[1];
-      console.log(user);
+  }else{
+    if(taba > 0 ){
+    $.ajax({
+      url: 'http://localhost/hotelSabana/src/php/addReserve2Db.php',
+      type: 'POST',
+      data: { user,rest,datetime},
+      success: function(response) {
+      }
 
-      var today = new Date();
-      var datetime = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+'|'+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      $.ajax({
-        url: 'http://localhost/hotelSabana/src/php/addReserve2Db.php',
-        type: 'POST',
-        data: { user,rest,datetime},
-        success: function(response) {
-
-        }
       });
-    }else{
-  //aqui va algo
+    }
+    }
   }
-}
+
 
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
 console.log(combo.value)
@@ -182,6 +189,11 @@ $.ajax({
   go2Main(){
     $('#ManageHTML').hide();
     $('#MainHTML').show();
+    $('#jqUser').val("");
+    $('#jqPass').val("");
+    $('#usuario').empty();
+    $('#correo').empty();
+    $('#cedula').empty();
   }
 
   isLogged(){

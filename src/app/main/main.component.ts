@@ -35,6 +35,11 @@ export class MainComponent implements OnInit {
   go2Manage(){
     $('#ManageHTML').show();
     $('#MainHTML').hide();
+    $('#alerta').show();
+    $('#alerta').fadeIn();
+    setTimeout(function() {
+         $("#alerta").fadeOut();
+    },1000);
     var n1= $('#number1Main').val()+''
     var n2= $('#number2Main').val()+''
     var n3 = $('#number3Main').val()+''

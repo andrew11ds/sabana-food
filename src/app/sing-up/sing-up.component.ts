@@ -27,7 +27,7 @@ export class SingUpComponent implements OnInit {
     if ( fName != "" && fLastName != "" && fEmail != "" && fCed != "" && fPass != "") {
       $.ajax({
           type: 'POST',
-          url: '../assets/PHP/addUser2Db.php',
+          url: 'http://localhost/hotelSabana/src/php/addUser2Db.php',
           data: {fName,fLastName,fEmail,fCed,fPass},
           success: function (response) {
           }
