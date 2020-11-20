@@ -29,7 +29,7 @@
               <input type="email" class="form-control" placeholder="Enter your email...">
             </div>
             <div class="col-12 col-md-4">
-              <button (click) = "getR()" type="button" class="btn btn-block btn-danger" >Sign up!</button>
+              <button (click) = "getRestaurants()" type="button" class="btn btn-block btn-danger" >Sign up!</button>
             </div>
             </div>
         </form>
@@ -42,7 +42,7 @@
                 <div class="row">
                 <div class="container p-4">
                   <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                      <div *ngFor="let item of items; let i = index">
+                      <div *ngFor="let item of this.items; let i = index">
                         <div *ngIf="true">
                           <div class="col-sm-12">
                             <div class="list-group-item">
