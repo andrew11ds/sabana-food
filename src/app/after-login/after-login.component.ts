@@ -33,6 +33,7 @@ export class AfterLoginComponent implements OnInit {
   go2Manage2(){
     $('#ManageHTML').show();
     $('#AfterHTML').hide();
+    $('#alerta').hide();
   }
 
   toMain(){

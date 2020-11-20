@@ -23,6 +23,7 @@ export class ManageClientsComponent implements OnInit {
 
       var rest = rID;
       var user = $('#cedula').text();
+    if(user != ""){
       var div =  user.split(" ");
       var user = div[1];
       console.log(user);
@@ -37,7 +38,8 @@ export class ManageClientsComponent implements OnInit {
 
         }
       });
-
+    }else{
+  //aqui va algo
   }
 
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
