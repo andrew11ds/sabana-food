@@ -28,6 +28,7 @@ export class AfterLoginComponent implements OnInit {
     $('#jqPass').val("");
     $('#usuario').empty();
     $('#correo').empty();
+    $('#cedula').empty();
   }
 
   go2Manage2(){

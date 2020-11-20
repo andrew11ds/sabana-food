@@ -15,7 +15,7 @@ export class ManageClientsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    $('#nameRestForm').hide();
   }
 
   addReserva(rID:any,taba:any){

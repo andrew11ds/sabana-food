@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    $('#nameForm').hide();
   }
 
   get padding(): any{
@@ -58,6 +58,22 @@ export class MainComponent implements OnInit {
     //  $('#number2').val($('#number2Main').val());
     //  $('#number3').val($('#number3Main').val());
 
+  }
+
+  go2Manage2(){
+    $('#ManageHTML').show();
+    $('#MainHTML').hide();
+    var input = $('#inputName').val();
+    if (input != '') {
+      $('#nameInputForm').val(input);
+    }
+  }
+
+  switch2Name(){
+    $('#dirForm').hide();
+    $('#nameForm').show();
+    $('#dirRestForm').hide();
+    $('#nameRestForm').show();
   }
 
 }
