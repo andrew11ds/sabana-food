@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from "../data.service";
 import { Router } from "@angular/router";
 import { AfterLoginComponent } from '../after-login/after-login.component';
-import $ from "jquery";
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-login',
@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
   			type: 'POST',
   			data: {userName,userPass},
   			success: function (response) {
-  					var user_state = JSON.parse(response);
+  					console.log(response);
+
   					if (response!="null") {
 
   					}else {

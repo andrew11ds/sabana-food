@@ -3,12 +3,9 @@
   header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
   header("Content-Type': 'application/json");
   require 'conexion.php';
-  $json = file_get_contents('php://input');
-  $params = json_decode($json);
-  $valor = $params->userName;
-  $valor2 = $params->userPass;
+  $valor = $_POST['userName'];
+  $valor2 = $_POST['userPass'];
   $array = Array();
-
   $array=null;
 
   if(!empty($valor) && !empty($valor2)){
