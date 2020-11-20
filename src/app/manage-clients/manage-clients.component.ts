@@ -19,7 +19,7 @@ export class ManageClientsComponent implements OnInit {
   }
 
 
-  addReserva(rID){
+  addReserva(rID:any){
 
       var rest = rID;
       var user = $('#cedula').text();
@@ -41,6 +41,7 @@ export class ManageClientsComponent implements OnInit {
     }else{
   //aqui va algo
   }
+}
 
 getRestaurants(combo:any,number1:any,number2:any,number3:any){
 console.log(combo.value)
@@ -77,7 +78,7 @@ console.log(this.items)
 }
 getPartner(restaurant_name:string ,address:string){
   return JSON.parse($.ajax({
-    url: '../assets/PHP/getRestDb.php', //'http://localhost/hotelSabana/src/php/getRestDb.php'
+    url: 'http://localhost/hotelSabana/src/php/getRestDb.php', //'http://localhost/hotelSabana/src/php/getRestDb.php'
     type: 'POST',
     global: false,
     async: false,
@@ -89,7 +90,7 @@ getPartner(restaurant_name:string ,address:string){
 }
 getRestaurantsByGeo(lat:any,lng:any,rad:any){
   return JSON.parse($.ajax({
-   url: '../assets/PHP/getRestByGeo.php', //'http://localhost/hotelSabana/src/php/getRestByGeo.php'
+   url: 'http://localhost/hotelSabana/src/php/getRestByGeo.php', //'http://localhost/hotelSabana/src/php/getRestByGeo.php'
    type: 'POST',
    global: false,
    async: false,
@@ -102,7 +103,7 @@ getRestaurantsByGeo(lat:any,lng:any,rad:any){
 
 getGeoByAddress(address:string){
    return JSON.parse($.ajax({
-    url: '../assets/PHP/getGeoByAddress.php', //'http://localhost/hotelSabana/src/php/getGeoByAddress.php'
+    url: 'http://localhost/hotelSabana/src/php/getGeoByAddress.php', //'http://localhost/hotelSabana/src/php/getGeoByAddress.php'
     type: 'POST',
     global: false,
     async: false,

@@ -35,9 +35,24 @@ export class MainComponent implements OnInit {
   go2Manage(){
     $('#ManageHTML').show();
     $('#MainHTML').hide();
-    $('#number1').val($('#number1Main').val());
-    $('#number2').val($('#number2Main').val());
-    $('#number3').val($('#number3Main').val());
+    var n1= $('#number1Main').val()+''
+    var n2= $('#number2Main').val()+''
+    var n3 = $('#number3Main').val()+''
+    console.log(n1,n2,n3)
+    if (n1!='') {
+      console.log("entre")
+     $('#number1').val(n1)
+    }
+    if (n2 !='') {
+      $('#number2').val(n2)
+    }
+    if (n3 !='') {
+      $('#number3').val(n3)
+    }
+
+    //  $('#number2').val($('#number2Main').val());
+    //  $('#number3').val($('#number3Main').val());
+
   }
 
 }
