@@ -25,11 +25,38 @@
       <div class="col-md-4">
         <form>
           <div class="form-row">
-            <div class="col-12 col-md-8 mb-2 mb-md-0">
-              <input type="email" class="form-control" placeholder="Enter your email...">
+            <div class="col-12 col-md-12">
+              <label class="text-danger">Por favor digite una dirección:</label>
             </div>
-            <div class="col-12 col-md-4">
-              <button (click) = "getRestaurants()" type="button" class="btn btn-block btn-danger" >Sign up!</button>
+            <div class="col-12 col-md-3 mb-2 mb-md-0">
+              <select #combo class="form-control">
+                <option value="Carrera">CRA</option>
+                <option value="Calle">CLL</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-md-2 mb-2 mb-md-0">
+              <input #number1 type="email" id="number1" class="form-control" placeholder="#">
+            </div>
+
+            <div class="col-12 col-md-1 mb-2 mb-md-0">
+              <h2>#</h2>
+            </div>
+
+            <div class="col-12 col-md-2 mb-2 mb-md-0">
+              <input #number2 type="email" id="number2" class="form-control" placeholder="#">
+            </div>
+
+            <div class="col-12 col-md-1 mb-2 mb-md-0">
+              <h2>-</h2>
+            </div>
+
+            <div class="col-12 col-md-3 mb-2 mb-md-0">
+              <input #number3 type="email" id="number3" class="form-control" placeholder="Opcional">
+            </div>
+
+            <div class="col-12 col-md-12">
+              <button (click) = "getRestaurants(combo,number1,number2,number3)" type="button" class="btn btn-block btn-danger" >Buscar</button>
             </div>
             </div>
         </form>

@@ -97,8 +97,23 @@ getRestaurants(){
   });
 }
 */
-getRestaurants(){
+getRestaurants(combo:any,number1:any,number2:any,number3:any){
+console.log(combo.value)
+console.log(number1.value)
+console.log(number2.value)
+console.log(number3.value)
+
+var address2 = combo.value
+var address2 = address2.concat('+',number1.value.toString(),'+',number2.value.toString())
+if (number2.value.toString() != '') {
+  var address2 = address2.concat('+',number3.value.toString())
+}
+console.log(address2);
+
+
 var address = 'Calle+72+43'
+address = address2
+
 var geojson=this.getGeoByAddress(address).results[0].geometry.location
 console.log(geojson)
 var lat=geojson.lat
